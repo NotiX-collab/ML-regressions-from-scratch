@@ -1,9 +1,11 @@
-# ML-regressions-from-scratch
-This project tells about how basic ML concepts I divided it into 3 parts.
+# Machine Learning from Scratch: Regressions
+This project is a deep dive into fundamental ML concepts, built from the ground up.
 
-## Key idea
-I'm sure that if you want to be good at Machine Learning you need to know how it works under the hood.
-## Road map
-1. Logic implementation using loops
-2. Optimized version (Vectorization)
-3. Comparing these two methods using graphics.
+#💡 Key Idea
+I am convinced that to truly excel in Machine Learning, you must understand how algorithms work under the hood. This repository is my journey from mathematical theory to optimized code.
+
+#🗺 Roadmap
+The project is divided into three evolutionary stages:
+1. Logic Implementation: Pure Python implementation using loops to understand the mechanics of Gradient Descent.
+2. Optimized Version: Transitioning to Vectorization with NumPy for high-performance computing.
+3. Benchmark & Analysis: Comparing both methods using performance metrics and visual graphics.
