@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import pandas as pd
-import numpy as np # Only for np.exp() for accuracy
+import numpy as np  # np.exp() for accuracy
 
 
 # Sigmoid function: maps any input into a value between 0 and 1
@@ -81,20 +81,35 @@ if __name__ == "__main__":
         f.write(f"{w_train}\n{b_train}")
 
     # Visualization
-    plt.figure(figsize=(12, 6))
+    plt.figure(figsize=(12, 10))
 
-    # Plot 1: Actual Data
+    # Plot 1: Log Loss cost function
+    plt.subplot(2, 1, 1)
+    plt.plot(history, linewidth=2, label="Cost function")
+    plt.legend(frameon=True, shadow=True, fontsize="medium", facecolor="white")
+    plt.xlabel("Iteration")
+    plt.ylabel("Log Loss")
+    plt.grid(True)
+
+    # Plot 2: Model fit on training data
+    plt.subplot(2, 1, 2)
     plt.scatter(X, Y, color="blue", alpha=0.3, label="Actual Data (0 or 1)")
-    plt.axhline(y=0.5, color='gray', linestyle='--', label='Threshold 0.5') # Threshold
+    plt.axhline(y=0.5, color="gray", linestyle="--", label="Threshold 0.5")  # Threshold
 
     # Generate smooth sigmoid curve using 100 points
     x_line = [i * 0.1 for i in range(101)]
     y_line = [sigmoid(w_train * x + b_train) for x in x_line]
 
-    # Plot 2: The sigmoid function
-    plt.plot(x_line, y_line, color="red", linewidth=3, label="Logistic Regression (Probability)")
+    plt.plot(
+        x_line,
+        y_line,
+        color="red",
+        linewidth=3,
+        label="Logistic Regression (Probability)",
+    )
     plt.xlabel("Hours")
     plt.ylabel("Pass")
-    plt.legend()
+    plt.legend(frameon=True, shadow=True, fontsize="medium", facecolor="white")
     plt.grid(True, alpha=0.2)
-    plt.show()
+    plt.savefig("Cost_function.png", dpi=100)
+
