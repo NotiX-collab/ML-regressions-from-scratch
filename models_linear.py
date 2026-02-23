@@ -3,7 +3,7 @@ import time
 import matplotlib.pyplot as plt
 
 
-# Implementing linear regressions using loops
+# Implementing linear regression using loops
 class LinearRegressionNaive:
     def __init__(self, alpha=0.001, iterations=1000):
         self.alpha = alpha
@@ -50,7 +50,7 @@ class LinearRegressionNaive:
 
     def fit(self, X, Y):
         m, n = X.shape
-        self.w = np.zeros(n) # Initialize weights for each feature
+        self.w = np.zeros(n)  # Initialize weights for each feature
         self.history = []
 
         for iteration in range(self.iterations):
@@ -69,12 +69,12 @@ class LinearRegressionNaive:
         return self.w, self.b, self.history
 
 
-# Implementing linear regressions using NumPy (Vectorization)
+# Implementing linear regression using NumPy (Vectorization)
 class LinearRegressionVectorized:
     def __init__(self, alpha=0.001, iterations=1000, _lambda=0.1):
         self.alpha = alpha
         self.iterations = iterations
-        self._lambda = _lambda
+        self._lambda = _lambda  # Regularization parameter
         self.w = None
         self.b = 0.0
         self.mu = None
@@ -102,7 +102,7 @@ class LinearRegressionVectorized:
         cost = np.sum(error**2) / (2 * m) + reg_cost
         return cost
 
-    # Compute vectorized gradients for weight (w) and bias (b)
+    # Compute gradients for weight (w) and bias (b) using matrix operations
     def compute_gradient(self, X, y):
         m = X.shape[0]
         # Predicted values using dot product
@@ -136,7 +136,7 @@ class LinearRegressionVectorized:
             if iteration % 1000 == 0 or iteration == self.iterations - 1:
                 curr_cost = self.compute_cost(X_norm, y)
                 self.history.append(curr_cost)
-                print(f"Iteration {iteration}: Cost {curr_cost:.4f}")
+                print(f"Vectorized Iteration {iteration}: Cost {curr_cost:.4f}")
 
         return self.w, self.b, self.history
 
@@ -180,7 +180,7 @@ if __name__ == "__main__":
 
     # Graphic 1: Naive (loops)
     plt.subplot(2, 1, 1)
-    plt.plot(x_naive, m1.history, color='#e74c3c', linewidth=2, label="Naive MSE")
+    plt.plot(x_naive, m1.history, color="#e74c3c", linewidth=2, label="Naive MSE")
     plt.title("Naive Implementation (Loops) Learning Curve", fontsize=14)
     plt.xlabel("Iteration")
     plt.ylabel("Cost")
@@ -189,7 +189,7 @@ if __name__ == "__main__":
 
     # Graphic 2: Vectorized (Matrices)
     plt.subplot(2, 1, 2)
-    plt.plot(x_vec, m2.history, color='#2ecc71', linewidth=2, label="Vectorized MSE")
+    plt.plot(x_vec, m2.history, color="#2ecc71", linewidth=2, label="Vectorized MSE")
     plt.title("Vectorized Implementation Learning Curve", fontsize=14)
     plt.xlabel("Iteration")
     plt.ylabel("Cost")
