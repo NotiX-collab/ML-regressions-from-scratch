@@ -20,3 +20,6 @@ By moving from explicit Python loops to **Vectorized Operations** (Linear Algebr
 I am deeply convinced that to become a true master in any field, one must understand exactly how things work "under the hood."
 
 Building these models from scratch isn't about reinventing the wheel—it's about gaining the fundamental insight that you simply cannot get by using high-level libraries. Mastery comes from the ability to deconstruct a complex system into its core components and rebuild it with your own hands.
+
+### Status
+Project is completed. I've achieved my goal of understanding the fundamentals of ML optimization and vectorization. I'm not actively developing new features here, but feel free to open a PR if you see a way to make it even cleaner.
